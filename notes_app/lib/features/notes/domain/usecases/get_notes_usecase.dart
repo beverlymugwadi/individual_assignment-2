@@ -1,5 +1,3 @@
-// lib/features/notes/domain/usecases/get_notes_usecase.dart
-
 import 'package:notes_app/core/usecases/usecase.dart';
 import 'package:notes_app/features/notes/domain/entities/note_entity.dart';
 import 'package:notes_app/features/notes/domain/repositories/note_repository.dart';

@@ -1,5 +1,3 @@
-// lib/features/notes/domain/usecases/delete_note_usecase.dart
-
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:notes_app/core/errors/failures.dart';

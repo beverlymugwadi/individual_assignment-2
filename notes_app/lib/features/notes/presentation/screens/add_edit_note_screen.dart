@@ -1,5 +1,3 @@
-// lib/features/notes/presentation/screens/add_edit_note_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:notes_app/features/authentication/presentation/manager/auth_provider.dart' hide AuthProvider;
 import 'package:notes_app/features/authentication/presentation/screens/auth_screen.dart'; // For showSnackBar

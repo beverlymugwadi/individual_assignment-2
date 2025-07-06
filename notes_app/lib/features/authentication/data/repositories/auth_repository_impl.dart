@@ -1,17 +1,15 @@
-// lib/features/authentication/data/repositories/auth_repository_impl.dart
-
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart'; // Import this if not already there
+import 'package:firebase_auth/firebase_auth.dart'; 
 import 'package:notes_app/core/errors/exceptions.dart';
 import 'package:notes_app/core/errors/failures.dart';
 import 'package:notes_app/features/authentication/data/datasources/auth_remote_data_source.dart';
-import 'package:notes_app/features/authentication/data/models/user_model.dart'; // Import UserModel
+import 'package:notes_app/features/authentication/data/models/user_model.dart'; 
 import 'package:notes_app/features/authentication/domain/entities/user_entity.dart';
 import 'package:notes_app/features/authentication/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
-  final FirebaseAuth firebaseAuth; // Add FirebaseAuth here to get current user directly
+  final FirebaseAuth firebaseAuth; // to get current user directly
 
   AuthRepositoryImpl({required this.remoteDataSource, required this.firebaseAuth}); // Update constructor
 
@@ -60,12 +58,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Stream<UserEntity?> get authStateChanges { // This is now a getter, matching AuthRepository
+  Stream<UserEntity?> get authStateChanges { // a getter, matching AuthRepository
     return remoteDataSource.authStateChanges;
   }
 
   @override
-  UserEntity? getCurrentUser() { // NEW: Implementation for getCurrentUser
+  UserEntity? getCurrentUser() { // Implementation for getCurrentUser
     final user = firebaseAuth.currentUser;
     if (user != null) {
       return UserModel.fromFirebaseUser(user);

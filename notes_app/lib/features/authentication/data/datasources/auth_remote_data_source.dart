@@ -1,5 +1,3 @@
-// lib/features/authentication/data/datasources/auth_remote_data_source.dart
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:notes_app/core/errors/exceptions.dart';
 import 'package:notes_app/features/authentication/data/models/user_model.dart'; // <--- Ensure this path is correct
@@ -8,7 +6,7 @@ abstract class AuthRemoteDataSource {
   Future<UserModel> signInWithEmailAndPassword(String email, String password);
   Future<UserModel> signUpWithEmailAndPassword(String email, String password);
   Future<void> signOut();
-  Stream<UserModel?> get authStateChanges; // This is a getter here, matches the contract
+  Stream<UserModel?> get authStateChanges; // a getter here, matches the contract
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {

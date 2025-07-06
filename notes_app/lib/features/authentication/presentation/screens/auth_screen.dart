@@ -1,5 +1,3 @@
-// lib/features/authentication/presentation/screens/auth_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:notes_app/features/authentication/presentation/manager/auth_provider.dart' as AppProvider;
 import 'package:notes_app/features/authentication/presentation/manager/auth_state.dart';

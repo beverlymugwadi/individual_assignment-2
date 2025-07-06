@@ -1,5 +1,3 @@
-// lib/core/errors/failures.dart
-
 import 'package:equatable/equatable.dart';
 
 abstract class Failure extends Equatable {
@@ -23,7 +21,7 @@ class AuthFailure extends Failure {
   const AuthFailure({super.message = 'Authentication failure.'});
 }
 
-// NEW: Specific Authentication Failures
+//Specific Authentication Failures
 class WeakPasswordFailure extends AuthFailure {
   const WeakPasswordFailure({super.message = 'The password provided is too weak.'});
 }

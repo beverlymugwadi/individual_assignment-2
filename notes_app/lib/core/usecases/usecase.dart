@@ -1,5 +1,3 @@
-// lib/core/usecases/usecase.dart (UPDATED)
-
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:notes_app/core/errors/failures.dart';
@@ -14,7 +12,7 @@ abstract class StreamUseCase<Type, Params> {
   Stream<Type> call(Params params);
 }
 
-// NEW: Abstract class for use cases that take no parameters and return a direct type (not a Future or Stream of Either)
+//Abstract class for use cases that take no parameters and return a direct type 
 abstract class NoParamsUseCase<Type> {
   Type call(NoParams params);
 }

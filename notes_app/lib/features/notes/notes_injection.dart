@@ -1,5 +1,3 @@
-// lib/features/notes/notes_injection.dart
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:notes_app/features/notes/data/datasources/note_remote_data_source.dart';

@@ -1,5 +1,3 @@
-// lib/core/errors/exceptions.dart
-
 class ServerException implements Exception {
   final String message;
   const ServerException({this.message = 'Server error occurred.'});
@@ -15,7 +13,7 @@ class NotAuthenticatedException implements Exception {
   const NotAuthenticatedException({this.message = 'User is not authenticated.'});
 }
 
-// NEW: Authentication-specific exception
+// Authentication-specific exception
 class AuthException implements Exception {
   final String message;
   const AuthException({this.message = 'Authentication error occurred.'});

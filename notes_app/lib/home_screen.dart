@@ -1,5 +1,3 @@
-// lib/home_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:notes_app/features/authentication/presentation/manager/auth_provider.dart' hide AuthProvider;
 import 'package:notes_app/features/authentication/presentation/screens/auth_screen.dart'; // For showSnackBar
@@ -16,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appAuthProvider = Provider.of<AppAuthProvider>(context);
-    // notesProvider is accessed via Consumer below, so no need for direct Provider.of here if not used outside Consumer.
+    // notesProvider is accessed via Consumer 
     final userEmail = appAuthProvider.currentUser?.email ?? 'Guest';
     final currentUserId = appAuthProvider.currentUser?.uid; // Get userId directly from AuthProvider
 
@@ -40,10 +38,8 @@ class HomeScreen extends StatelessWidget {
           : Consumer<NotesProvider>( // Consumer to react to NotesProvider changes
               builder: (context, notesProvider, child) {
                 // Listen for operation success/error from NotesProvider
-                // This will execute after the frame is built, preventing setState during build errors.
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   if (notesProvider.state is NoteOperationSuccess) {
-                    // Assuming showSnackBar is a utility function in auth_screen.dart or common_widgets
                     showSnackBar(
                         context, (notesProvider.state as NoteOperationSuccess).message);
                   } else if (notesProvider.state is NotesError) {
@@ -125,9 +121,8 @@ class HomeScreen extends StatelessWidget {
                               ),
                             );
                           },
-                          // --- MODIFIED TRAILING WIDGET TO INCLUDE EDIT AND DELETE ICONS ---
                           trailing: Row(
-                            mainAxisSize: MainAxisSize.min, // Important for Row inside ListTile trailing
+                            mainAxisSize: MainAxisSize.min, 
                             children: [
                               // Edit Icon Button
                               IconButton(
@@ -163,7 +158,7 @@ class HomeScreen extends StatelessWidget {
           // Navigate to AddEditNoteScreen to add a new note
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (ctx) => const AddEditNoteScreen(), // No note passed for new creation
+              builder: (ctx) => const AddEditNoteScreen(), 
             ),
           );
         },
@@ -196,7 +191,7 @@ class HomeScreen extends StatelessWidget {
                 notesProvider.deleteNote(note.id!, currentUserId);
                 Navigator.of(ctx).pop(); // Close dialog
               } else {
-                // Ensure showSnackBar exists, typically a global helper or in auth_screen.dart as you imported
+                
                 showSnackBar(context, 'Error: Note ID or user ID missing for delete.', isError: true);
                 Navigator.of(ctx).pop();
               }

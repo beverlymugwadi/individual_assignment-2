@@ -1,5 +1,3 @@
-// lib/features/authentication/domain/usecases/get_current_user_usecase.dart
-
 import 'package:notes_app/core/usecases/usecase.dart';
 import 'package:notes_app/features/authentication/domain/entities/user_entity.dart';
 import 'package:notes_app/features/authentication/domain/repositories/auth_repository.dart';

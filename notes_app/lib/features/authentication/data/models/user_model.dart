@@ -1,5 +1,3 @@
-// lib/features/authentication/data/models/user_model.dart
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:notes_app/features/authentication/domain/entities/user_entity.dart';
 
@@ -30,7 +28,7 @@ class UserModel extends UserEntity {
     };
   }
 
-  // Optional: A copyWith method for immutability, if needed
+  //A copyWith method for immutability
   @override
   UserModel copyWith({
     String? uid,

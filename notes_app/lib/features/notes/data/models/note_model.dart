@@ -1,5 +1,3 @@
-// lib/features/notes/data/models/note_model.dart
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:notes_app/features/notes/domain/entities/note_entity.dart';
 

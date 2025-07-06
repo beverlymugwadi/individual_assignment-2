@@ -1,5 +1,3 @@
-// lib/features/authentication/domain/usecases/sign_out_usecase.dart
-
 import 'package:dartz/dartz.dart';
 import 'package:notes_app/core/errors/failures.dart';
 import 'package:notes_app/core/usecases/usecase.dart';

@@ -1,5 +1,3 @@
-// lib/features/notes/domain/entities/note_entity.dart
-
 import 'package:equatable/equatable.dart';
 
 class NoteEntity extends Equatable {
@@ -20,7 +18,7 @@ class NoteEntity extends Equatable {
   @override
   List<Object?> get props => [id, userId, title, content, timestamp];
 
-  // Optional: Add a copyWith method for immutability
+  // a copyWith method for immutability
   NoteEntity copyWith({
     String? id,
     String? userId,

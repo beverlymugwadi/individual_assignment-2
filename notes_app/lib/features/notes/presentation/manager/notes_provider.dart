@@ -1,5 +1,3 @@
-// lib/features/notes/presentation/manager/notes_provider.dart
-
 import 'package:flutter/material.dart';
 import 'package:notes_app/core/errors/failures.dart';
 import 'package:notes_app/features/notes/domain/entities/note_entity.dart';
@@ -50,7 +48,6 @@ class NotesProvider extends ChangeNotifier {
     );
   }
 
-  // <--- ADD THIS clearNotes METHOD HERE --->
   void clearNotes() {
     _notesSubscription?.cancel(); // Cancel any active note stream subscription
     _notes = []; // Clear the list of notes

@@ -1,5 +1,3 @@
-// lib/features/authentication/domain/usecases/sign_in_usecase.dart
-
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:notes_app/core/errors/failures.dart';

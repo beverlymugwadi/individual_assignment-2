@@ -1,5 +1,3 @@
-// lib/features/authentication/presentation/manager/auth_provider.dart
-
 import 'package:flutter/material.dart';
 import 'package:notes_app/core/errors/failures.dart';
 import 'package:notes_app/core/usecases/usecase.dart';
@@ -101,16 +99,10 @@ class AppAuthProvider extends ChangeNotifier {
     );
     notifyListeners();
   }
-
-  // --- MODIFIED HERE ---
-  // This method now correctly extracts the message from the specific Failure object
   String _mapFailureToMessage(Failure failure) {
     if (failure is ServerFailure) {
       return 'Server Error: ${failure.message}';
     } else if (failure is AuthFailure) {
-      // For any AuthFailure (including specific ones like WeakPasswordFailure),
-      // just return its message directly, as the repository has already
-      // determined the most appropriate user-friendly text.
       return failure.message;
     } else if (failure is GenericFailure) {
       return failure.message;

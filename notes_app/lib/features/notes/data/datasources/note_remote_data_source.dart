@@ -1,5 +1,3 @@
-// lib/features/notes/data/datasources/note_remote_data_source.dart
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:notes_app/core/errors/exceptions.dart'; // Import the new exception
@@ -63,10 +61,6 @@ class NoteRemoteDataSourceImpl implements NoteRemoteDataSource {
     } on FirebaseException catch (e) {
       throw ServerException(message: e.message ?? 'Firebase error getting notes');
     } catch (e) {
-      // Errors in streams are typically handled by the stream's onError callback.
-      // This catch block would primarily handle synchronous errors during stream setup.
-      // For persistent stream errors, the StreamBuilder or .listen.onError handles it.
-      // We can throw ServerException or simply let the stream's error channel handle it.
       throw ServerException(message: e.toString());
     }
   }

@@ -1,5 +1,3 @@
-// lib/features/notes/presentation/manager/notes_state.dart
-
 import 'package:equatable/equatable.dart';
 import 'package:notes_app/features/notes/domain/entities/note_entity.dart';
 

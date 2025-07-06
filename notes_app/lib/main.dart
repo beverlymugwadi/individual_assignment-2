@@ -1,5 +1,3 @@
-// lib/main.dart
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart'; // Corrected import
 import 'package:notes_app/features/authentication/authentication_injection.dart';
@@ -14,8 +12,7 @@ import 'package:notes_app/home_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    // You'll need to add your Firebase options here
-    // For example: options: DefaultFirebaseOptions.currentPlatform,
+    // added your Firebase options here
   );
   runApp(
     // MultiProvider is now at the top level, wrapping MyApp
@@ -37,7 +34,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // Define auth and notes providers here to ensure they persist and we can add a listener
+  // Define auth and notes providers 
   late AppAuthProvider _appAuthProvider;
   late NotesProvider _notesProvider;
 
@@ -47,17 +44,14 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    // Now context.read is safe here because MultiProvider is an ancestor.
     _appAuthProvider = context.read<AppAuthProvider>();
     _notesProvider = context.read<NotesProvider>();
 
-    // This block of code should only run once
     if (!_listenerAdded) {
       _appAuthProvider.addListener(_onAuthChange);
       _listenerAdded = true;
 
       // Initialize authProvider.
-      // If authProvider.initialize() itself changes state, the listener will catch it.
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _appAuthProvider.initialize();
       });
@@ -82,7 +76,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( // MultiProvider is no longer here
+    return MaterialApp( 
       title: 'Notes App',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
